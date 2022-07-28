@@ -9,7 +9,13 @@ window.addEventListener('load', function() {
   } else {
       form.addEventListener("submit", processForm);
   }
+  form.querySelector("#end").addEventListener("mousedown", noInput);
   
+  function noInput(e){
+    if (e.target.value == ""){
+      e.target.value = e.target.parentElement.querySelector("#start").value
+    }
+  }
   
 })
 
