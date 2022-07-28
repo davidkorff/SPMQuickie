@@ -11,11 +11,22 @@ window.addEventListener('load', function() {
   }
   form.querySelector("#end").addEventListener("mousedown", noInput);
   
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = yyyy + '-' + mm + '-' + dd;
+  form.querySelector("#start").value = today
+
+  
+  
   function noInput(e){
     if (e.target.value == ""){
       e.target.value = e.target.parentElement.querySelector("#start").value
     }
   }
+  // debugger
   
 })
 
